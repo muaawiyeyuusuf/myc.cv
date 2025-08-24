@@ -1,0 +1,18 @@
+/* Custom extras for looping effects and transitions */
+html { scroll-behavior: smooth; }
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Optional glassy card effect */
+.card-glass {
+  background: linear-gradient(145deg, rgba(255,255,255,.6), rgba(255,255,255,.35));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
+}
+
+/* Smooth hover lift */
+.lift:hover { transform: translateY(-4px); }
+
+/* Prevent text selection on draggable animated shapes */
+.noselect { user-select: none; }

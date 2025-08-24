@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ME COMBINED — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  // Tailwind config for custom colors and animations
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+        colors: {
+          brand: {
+            50: '#eef2ff',
+            100: '#e0e7ff',
+            200: '#c7d2fe',
+            300: '#a5b4fc',
+            400: '#818cf8',
+            500: '#6366f1',
+            600: '#4f46e5',
+            700: '#4338ca',
+            800: '#3730a3',
+            900: '#312e81',
+          }
+        },
+        keyframes: {
+          floaty: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-10px)' } },
+          shimmer: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '100% 50%' } },
+          spinSlow: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } }
+        },
+        animation: {
+          floaty: 'floaty 6s ease-in-out infinite',
+          shimmer: 'shimmer 6s linear infinite',
+          spinSlow: 'spinSlow 18s linear infinite'
+        },
+        boxShadow: {
+          glow: '0 10px 30px rgba(99, 102, 241, 0.35)'
+        }
+      }
+    },
+    darkMode: 'class'
+  }
+</script>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="font-poppins text-neutral-900 dark:text-neutral-100 bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-950 dark:to-neutral-900">
+<header class="fixed inset-x-0 top-0 z-50 backdrop-blur-sm bg-white/70 dark:bg-neutral-900/60 border-b border-white/30 dark:border-neutral-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-2xl bg-gradient-to-tr from-brand-500 via-indigo-500 to-fuchsia-500 animate-spinSlow"></div>
+        <span class="font-poppins font-bold text-lg">ME <span class="text-brand-600">COMBINED</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 font-poppins">
+        <a class="hover:text-brand-600 transition" href="index.html">Home</a>
+        <a class="hover:text-brand-600 transition" href="services.html">Services</a>
+        <a class="hover:text-brand-600 transition" href="projects.html">Projects</a>
+        <a class="hover:text-brand-600 transition" href="about.html">About</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="p-2 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:shadow-glow transition" aria-label="Toggle theme">
+          <svg id="sunIcon" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zm10.48 14.32l1.8 1.8 1.79-1.8-1.79-1.79-1.8 1.79zM12 4V1h-0v3h0zm0 19v-3h0v3h0zM4 12H1v0h3v0zm19 0h-3v0h3v0zM6.76 19.16l-1.8 1.79-1.79-1.79 1.79-1.79 1.8 1.79zM20.83 4.84l-1.79-1.79-1.8 1.79 1.8 1.79 1.79-1.79zM12 6a6 6 0 100 12A6 6 0 0012 6z"/></svg>
+          <svg id="moonIcon" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-neutral-200 dark:border-neutral-800" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60">
+      <a class="block py-2" href="index.html">Home</a>
+      <a class="block py-2" href="services.html">Services</a>
+      <a class="block py-2" href="projects.html">Projects</a>
+      <a class="block py-2" href="about.html">About</a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-24">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 gap-12 items-start">
+    <div class="reveal">
+      <h1 class="text-4xl sm:text-5xl font-extrabold">About Me</h1>
+      <p class="mt-4 text-neutral-600 dark:text-neutral-300">I’m a creative developer and designer dedicated to building modern, animated, and high-performance experiences. My mission is to help brands stand out online with clarity and motion.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <div class="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70">
+          <p class="text-sm text-neutral-500">Location</p>
+          <p class="font-semibold">Somalia / Remote</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70">
+          <p class="text-sm text-neutral-500">Focus</p>
+          <p class="font-semibold">Web • Graphics • Video • AI Agents</p>
+        </div>
+      </div>
+    </div>
+<div class="reveal relative">
+  <div class="rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-2xl">
+    <div class="aspect-[4/5] flex items-center justify-center">
+      <img src="https://i.pinimg.com/736x/77/7a/a1/777aa19dc0b85d62b29ab3fd2e6aa982.jpg" alt="My Photo" class="w-full h-full object-cover rounded-3xl">
+    </div>
+  </div>
+  <div class="absolute -bottom-6 -left-6 bg-white/70 dark:bg-neutral-900/70 backdrop-blur p-4 rounded-2xl shadow border border-white/30 dark:border-neutral-800">
+    <p class="font-semibold">Let’s work together</p>
+    <p class="text-sm text-neutral-600 dark:text-neutral-400">Open for freelance and collaborations.</p>
+  </div>
+</div>
+
+  </section>
+
+  <section id="contact" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="reveal p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 backdrop-blur">
+      <h2 class="text-2xl font-bold mb-4">Contact</h2>
+      <form class="grid sm:grid-cols-2 gap-4" onsubmit="event.preventDefault(); alert('Thanks! Your message has been sent.');">
+        <input required class="col-span-1 px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent" placeholder="Your name" />
+        <input required type="email" class="col-span-1 px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent" placeholder="Email address" />
+        <input class="sm:col-span-2 px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent" placeholder="Subject" />
+        <textarea required class="sm:col-span-2 px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent" rows="5" placeholder="Your message"></textarea>
+        <button class="sm:col-span-2 px-5 py-3 rounded-xl bg-brand-600 text-white shadow-glow hover:translate-y-[-2px] transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="mt-24 border-t border-neutral-200 dark:border-neutral-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8">
+    <div>
+      <h3 class="font-poppins font-bold text-lg">ME COMBINED</h3>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Modern websites & creative solutions that feel alive.</p>
+    </div>
+    <div class="md:text-center">
+      <p class="font-semibold">Quick Links</p>
+      <div class="mt-3 space-x-4">
+        <a class="hover:text-brand-600" href="services.html">Services</a>
+        <a class="hover:text-brand-600" href="projects.html">Projects</a>
+        <a class="hover:text-brand-600" href="about.html">About</a>
+      </div>
+    </div>
+    <div class="md:text-right">
+      <p class="font-semibold">Contact</p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">hello@mecombined.dev</p>
+      <a href="#contact" class="inline-block mt-3 px-4 py-2 rounded-xl bg-brand-600 text-white shadow-glow hover:translate-y-[-2px] transition">Contact Me</a>
+    </div>
+  </div>
+  <div class="py-6 text-center text-xs text-neutral-500">© <span id="year"></span> ME COMBINED. All Rights Reserved.</div>
+</footer>
+<script src="app.js"></script>
+
+</body>
+</html>
